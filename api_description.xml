@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apis>
+    <api id="1">
+        <description>Get Flight Details to track delayed baggage</description>
+        <url>https://mybag.aero/baggage/#/pax/lufthansa/en-gb/delayed/create-bag/flight-details</url>
+        <input>FLightNumber DepartureDate</input>
+        <output>FlightDetails</output>
+    </api>
+    <api id="2">
+        <description>Get Baggage Details to track delayed baggage</description>
+        <url>https://mybag.aero/baggage/#/pax/lufthansa/en-gb/delayed/create-bag/baggage-details</url>
+        <input>FlightDetails BaggageTag Description</input>
+        <output>BaggageDetails</output>
+    </api>
+    <api id="3">
+        <description>Get Passenger Details to track delayed baggage</description>
+        <url>https://mybag.aero/baggage/#/pax/lufthansa/en-gb/delayed/create-bag/passenger-details</url>
+        <input>BaggageDetails Name Address</input>
+        <output>PassengerDetails</output>
+    </api>
+    <api id="4">
+        <description>Submit review declaration to track delayed baggage</description>
+        <url>https://mybag.aero/baggage/#/pax/lufthansa/en-gb/delayed/create-bag/review</url>
+        <input>PassengerDetails Review</input>
+        <output>SubmitReviewDetails</output>
+    </api>
+    <api id="5">
+        <description>Submit review confirmation to track delayed baggage</description>
+        <url>https://mybag.aero/baggage/#/pax/lufthansa/en-gb/delayed/create-bag/report-confirmation</url>
+        <input>SubmitReviewDetails</input>
+        <output>ReviewConfirmationDetails</output>
+    </api>
+</apis>
