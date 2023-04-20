@@ -121,28 +121,28 @@ class GraphFindAllPaths<T> implements Iterable<T> {
     public static void main(String[] args) {
 
         GraphFindAllPaths<String> graphFindAllPaths = new GraphFindAllPaths<String>();
-        graphFindAllPaths.addNode("A");
-        graphFindAllPaths.addNode("B");
-        graphFindAllPaths.addNode("C");
-        graphFindAllPaths.addNode("D");
+        graphFindAllPaths.addNode("FlightNumber");
+        graphFindAllPaths.addNode("FlightDetails");
+        graphFindAllPaths.addNode("BaggageDetails");
+        graphFindAllPaths.addNode("PassengerDetails");
     
-        graphFindAllPaths.addEdge("A", "B", 10);
-        graphFindAllPaths.addEdge("A", "C", 15);
-        graphFindAllPaths.addEdge("B", "A", 10);
-        graphFindAllPaths.addEdge("C", "A", 15);
-        graphFindAllPaths.addEdge("B", "D", 10);
-        graphFindAllPaths.addEdge("C", "D", 20);
-        graphFindAllPaths.addEdge("D", "B", 10);
-        graphFindAllPaths.addEdge("D", "C", 20);
+        graphFindAllPaths.addEdge("FlightNumber", "FlightDetails", 10);
+        graphFindAllPaths.addEdge("FlightDetails", "BaggageDetails", 15);
+        graphFindAllPaths.addEdge("FlightDetails", "PassengerDetails", 10);
+        graphFindAllPaths.addEdge("PassengerDetails", "BaggageDetails", 15);
+        // graphFindAllPaths.addEdge("B", "D", 10);
+        // graphFindAllPaths.addEdge("C", "D", 20);
+        // graphFindAllPaths.addEdge("D", "B", 10);
+        // graphFindAllPaths.addEdge("D", "C", 20);
     
-        graphFindAllPaths.addEdge("B", "C", 5);
-        graphFindAllPaths.addEdge("C", "B", 5);
+        // graphFindAllPaths.addEdge("B", "C", 5);
+        // graphFindAllPaths.addEdge("C", "B", 5);
     
     
     
         FindAllPaths<String> findAllPaths = new FindAllPaths<String>(graphFindAllPaths);
     
-        List<List<String>> paths= findAllPaths.sort(findAllPaths.getAllPaths("D", "A"));
+        List<List<String>> paths= findAllPaths.sort(findAllPaths.getAllPaths("FlightNumber", "BaggageDetails"));
     
         for (List<String> path :paths)
         {
