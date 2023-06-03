@@ -1,0 +1,8 @@
+en_core_web_md/
+documentation/
+client/
+venv/
+nlp.py/
+main.py/
+ParseXML.java/
+api_description.xml/

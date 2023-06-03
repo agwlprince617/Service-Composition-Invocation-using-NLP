@@ -30,7 +30,7 @@ text2=(
     "Get Baggage Details to track delayed baggage."
     "Total number of baggages."
     "Number of checked in passengers."
-    )
+)
 
 
 
@@ -77,7 +77,7 @@ def calculate_similarity(text1,text2):
 
 
 
-
+    
 #Create a dictionary
 #store all the values
 #Sort according to the key pairs

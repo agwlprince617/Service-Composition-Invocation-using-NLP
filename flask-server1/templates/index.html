@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Service Composition & Invocation Using NLP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      .container {
+        max-width: 1000px;
+      }
+    </style>
+</head>
+<body>
+    <div class="container row align-items-start">
+        <div class="col">
+          <div class="col-sm-5 col-sm-offset-1">
+            <h1>Enter the input description</h1>
+            <br>
+            <form role="form" method='POST' action="/">
+            <div class="form-group">
+                <input type="string" name="description" class="form-control" id="description-box" placeholder="Enter Description..." style="max-width: 300px;" autofocus required>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <br>
+            {% for error in errors %}
+            <h4>{{ error }}</h4>
+            {% endfor %}
+            <br>
+         </div>
+    </div>
+        <div class="container row align-items-center">
+            <div class="col">
+        {% if top_matching_descriptions %}
+            <div id="top_matching_descriptions">
+            <table class="table table-striped" style="max-width: 100%;">
+                <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Scores</th>
+                </tr>
+                </thead>    
+                <tr>
+                    {% for key, value in top_matching_descriptions.items() %}
+                        <td>{{ key|e }}</td>
+                        <td>{{ value|e }}</td>
+                    {% endfor %}
+                </tr> 
+            </table>
+            </div>
+            </div>
+        {% endif %}
+    </div>
+  </div>
+</div>
+      <br><br>
+      <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html
